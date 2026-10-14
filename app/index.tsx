@@ -1,7 +1,10 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Home() {
+  function iniciarAplicacao() {
+    console.log("Botão pressionado");
+  }
   return (
     
     <SafeAreaView>
@@ -17,11 +20,14 @@ export default function Home() {
         <Text style={styles.descricao}>
           Organize suas tarefas de forma simples.
         </Text>
-        <View style={styles.botao}>
+        <Pressable 
+          style={styles.botao}
+          onPress={iniciarAplicacao}
+         >   
           <Text style={styles.textoBotao}>
             Começar
           </Text>
-         </View>
+         </Pressable>
         </View>
       </View>
     </SafeAreaView>
