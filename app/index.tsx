@@ -21,12 +21,18 @@ export default function Home() {
           Organize suas tarefas de forma simples.
         </Text>
         <Pressable 
-          style={styles.botao}
+          style={({ pressed}) => [
+          styles.botao,
+          pressed && styles.botaoPressionado
+          ]}
           onPress={iniciarAplicacao}
-         >   
+         >  
+          {({ pressed }) => (
           <Text style={styles.textoBotao}>
+            {pressed ? "Carregando..." : "Começar"}
             Começar
           </Text>
+          )}
          </Pressable>
         </View>
       </View>
@@ -77,5 +83,11 @@ const styles = StyleSheet.create({
     color:"#FFF",
     fontWeight: "bold",
     fontSize:18
+  },
+  botaoPressionado: {
+    backgroundColor: "#1D4ED8",
+    opacity: 0.9,
+    transform: [{ scale: 1.05}]
   }
+ 
 });
