@@ -6,16 +6,23 @@ export default function Home() {
     
     <SafeAreaView>
       <View style={styles.container}>
+        <View style={styles.card}>
         
         <Image
           source={require("../assets/images/logo.png")}
           style={styles.logo}
           resizeMode="contain"
           />
-          <Text style={styles.titulo}>TaskFlow</Text>
+        <Text style={styles.titulo}>TaskFlow</Text>
         <Text style={styles.descricao}>
           Organize suas tarefas de forma simples.
         </Text>
+        <View style={styles.botao}>
+          <Text style={styles.textoBotao}>
+            Começar
+          </Text>
+         </View>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -27,21 +34,42 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor:"#F3F4F6",
     padding: 20,
   },
   logo: {
-    width: 140,
-    height: 140,
+    width: 120,
+    height: 120,
+    marginBottom: 20
     
   },
   titulo: {
-    fontSize: 32,
+    fontSize: 34,
     fontWeight: "bold",
     color: "#2563EB",
+    marginBottom:10
   },
   descricao: {
     fontSize: 18,
     textAlign: "center",
-    marginTop: 15,
+    lineHeight:26,
+    marginBottom: 20,
   },
+  card: {
+    backgroundColor: "#FFFFFF",
+    padding: 30,
+    borderRadius: 20,
+    alignItems: "center",
+  },
+  botao:{
+    backgroundColor:"#2563EB",
+    paddingVertical:15,
+    paddingHorizontal:40,
+    borderRadius:10,
+  },
+  textoBotao:{
+    color:"#FFF",
+    fontWeight: "bold",
+    fontSize:18
+  }
 });
