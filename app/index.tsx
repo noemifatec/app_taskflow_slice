@@ -7,7 +7,7 @@ export default function Home() {
   }
   return (
     
-    <SafeAreaView>
+    <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.card}>
         
@@ -30,7 +30,7 @@ export default function Home() {
           {({ pressed }) => (
           <Text style={styles.textoBotao}>
             {pressed ? "Carregando..." : "Começar"}
-            Começar
+            
           </Text>
           )}
          </Pressable>
@@ -42,6 +42,10 @@ export default function Home() {
 
 
 const styles = StyleSheet.create({
+  safeArea: { 
+    flex:1,
+    backgroundColor: "#F3F4F6",
+  },
   container: {
     flex: 1,
     justifyContent: "center",
